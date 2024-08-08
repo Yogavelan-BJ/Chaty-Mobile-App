@@ -1,7 +1,7 @@
-<h1>Chaty Cross Platform Application</h1>
+<h1>Chaty Mobile App</h1>
 
 <p>
-  <strong>Chaty App</strong> enables real-time text chatting on both Android and iOS devices with a responsive and native-like experience.
+  <strong>Chaty Mobile App</strong> is a cross-platform apllication which enables real-time text chatting on both Android and iOS devices with a responsive and native-like experience.
 </p>
 
 

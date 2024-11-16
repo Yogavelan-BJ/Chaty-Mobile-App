@@ -1,12 +1,18 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Tabs } from "expo-router";
+import { useConversationContext } from "../../context/conversationContext.jsx";
+import { Stack, Tabs } from "expo-router";
 
 const AppLayout = () => {
+  const { selectedConversation } = useConversationContext();
   return (
-    <Tabs>
-      <Tabs.Screen name="home" />
-    </Tabs>
+    <Stack>
+      <Stack.Screen name="home" />
+      <Stack.Screen
+        name="conversation"
+        options={{ title: selectedConversation?.fullName }}
+      />
+    </Stack>
   );
 };
 

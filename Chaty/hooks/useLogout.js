@@ -6,9 +6,19 @@ import * as SecureStore from "expo-secure-store";
 const useLogout = () => {
   const [loading, setLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
-  const logout = () => {
+  const APIURL = process.env.EXPO_PUBLIC_API_URL;
+
+  const logout = async () => {
     setLoading(true);
     try {
+      const res = await fetch(`${APIURL}/api/auth/logout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      if (data.error) {
+        throw new Error(data.error);
+      }
       setAuthUser(null);
       SecureStore.deleteItemAsync("chatyUserDetails");
     } catch (error) {

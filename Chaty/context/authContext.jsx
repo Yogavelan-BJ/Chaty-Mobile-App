@@ -24,7 +24,6 @@ export const AuthContextProvider = ({ children }) => {
     } else if (!authUser && rootSegment[0] !== "(auth)") {
       router.replace("/");
     } else if (authUser && rootSegment[0] !== "(app)") {
-      router.dismissAll();
       router.replace("/(app)/home");
     }
   }, [authUser, rootSegment]);

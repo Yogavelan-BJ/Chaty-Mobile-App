@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/authContext";
 
 const index = () => {
   return (
-    <View className="justify-center items-center h-full">
+    <View className="justify-center items-center flex-grow bg-[#C9DABF]">
       <Link className="text-4xl" href="/login">
         <Text>login</Text>
       </Link>
